@@ -1,3 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+:root,
+.theme-light {
+  --app-text-primary: #111827;
+  --app-text-secondary: #e5e7eb;
+  --app-bg-root: #f8fafc;
+  --app-surface-container: #f8fafc;
+  --app-surface-card: #ffffff;
+  --app-border-default: #e5e7eb;
+  --app-status-loading: #2563eb;
+  --app-status-error: #dc2626;
+  --app-status-empty: #6b7280;
+  --app-control-bg: #111827;
+  --app-control-bg-hover: #1f2937;
+  --app-control-border: #111827;
+  --app-control-text: #ffffff;
+  --app-title-color: #111827;
+
+  --card-bg: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --card-border: #e5e7eb;
+  --card-shadow: 0 10px 28px rgba(17, 24, 39, 0.06);
+  --card-hover-border: #c7d2fe;
+  --card-hover-shadow: 0 14px 30px rgba(37, 99, 235, 0.12);
+  --card-id-bg: #eef2ff;
+  --card-id-text: #3730a3;
+  --card-muted-text: #4b5563;
+  --card-section-border: #f1f5f9;
+  --card-section-title: #475569;
+  --card-label-text: #6b7280;
+  --card-link-email: #2563eb;
+  --card-link-default: #1d4ed8;
+  --card-geo-bg: #f9fafb;
+  --card-geo-border: #e5e7eb;
+  --card-geo-pill-bg: #ffffff;
+  --card-geo-pill-border: #e5e7eb;
+  --card-geo-pill-text: #334155;
+  --card-geo-title-text: #334155;
+}
+
+.theme-dark {
+  --app-text-primary: #111827;
+  --app-text-secondary: #e5e7eb;
+  --app-bg-root: #0b1220;
+  --app-surface-container: #0b1220;
+  --app-surface-card: #0f172a;
+  --app-border-default: #1f2937;
+  --app-control-bg: #2563eb;
+  --app-control-bg-hover: #1d4ed8;
+  --app-control-border: #2563eb;
+  --app-control-text: #ffffff;
+  --app-title-color: #f8fafc;
+
+  --card-bg: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+  --card-border: #334155;
+  --card-shadow: 0 12px 30px rgba(2, 6, 23, 0.55);
+  --card-hover-border: #6366f1;
+  --card-hover-shadow: 0 14px 34px rgba(79, 70, 229, 0.25);
+  --card-id-bg: #312e81;
+  --card-id-text: #e0e7ff;
+  --card-muted-text: #94a3b8;
+  --card-section-border: #1e293b;
+  --card-section-title: #94a3b8;
+  --card-label-text: #94a3b8;
+  --card-link-email: #93c5fd;
+  --card-link-default: #93c5fd;
+  --card-geo-bg: #0b1220;
+  --card-geo-border: #1f2937;
+  --card-geo-pill-bg: #111827;
+  --card-geo-pill-border: #334155;
+  --card-geo-pill-text: #cbd5e1;
+  --card-geo-title-text: #94a3b8;
+}

@@ -1,0 +1,136 @@
+:host {
+  display: block;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: var(--app-bg-root);
+}
+
+.container {
+  background: var(--app-surface-container);
+  border: 1px solid var(--app-border-default);
+  border-radius: 1rem;
+  margin: 0 auto;
+  max-width: min(1600px, calc(100vw - 2rem));
+  padding: 1rem;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+:host(.theme-light) {
+  color: var(--app-text-primary);
+}
+
+:host(.theme-dark) {
+  color: var(--app-text-secondary);
+}
+
+.status-card {
+  background: var(--app-surface-card);
+  border: 1px solid var(--app-border-default);
+  border-radius: 0.875rem;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+}
+
+.status-card--loading {
+  border-left: 4px solid var(--app-status-loading);
+}
+
+.status-card--error {
+  border-left: 4px solid var(--app-status-error);
+}
+
+.status-card--empty {
+  border-left: 4px solid var(--app-status-empty);
+}
+
+.list-controls {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  background: var(--app-surface-card);
+  border: 1px solid var(--app-border-default);
+  border-radius: 0.55rem;
+  color: inherit;
+  min-width: 280px;
+  padding: 0.55rem 0.7rem;
+}
+
+.pagination-controls {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.55rem;
+}
+
+.pagination-controls span {
+  font-size: 0.92rem;
+}
+
+.user-list {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 680px) {
+  .user-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .user-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1440px) {
+  .user-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.error {
+  color: var(--app-status-error);
+  margin: 0 0 0.65rem;
+}
+
+button {
+  background: var(--app-control-bg);
+  border: 1px solid var(--app-control-border);
+  border-radius: 0.55rem;
+  color: var(--app-control-text);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+}
+
+button:hover {
+  background: var(--app-control-bg-hover);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media (max-width: 680px) {
+  .search-input {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .pagination-controls {
+    width: 100%;
+  }
+}

@@ -1,59 +1,73 @@
-# JsonplaceholderUsers
+# Jsonplaceholder
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+Projeto Angular para listagem de usuarios da API JSONPlaceholder, com tema dark/light, filtros e paginação.
 
-## Development server
+## Requisitos
 
-To start a local development server, run:
+- Node.js 20+
+- npm 10+
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalação
 
 ```bash
-ng generate component component-name
+npm ci
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Execução local
 
 ```bash
-ng generate --help
+npm run start
 ```
 
-## Building
+Acesse: `http://localhost:4200/`
 
-To build the project run:
+## Execução em rede local (LAN)
 
 ```bash
-ng build
+npm run start:lan
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Depois, acesse pelo celular/dispositivo na mesma rede:
 
-## Running unit tests
+`http://SEU_IP_LOCAL:4200/`
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Exemplo: `http://192.168.0.27:4200/`
+
+## Qualidade de código
 
 ```bash
-ng test
+npm run lint
+npm run format:check
+npm run format
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Build
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Testes
 
-## Additional Resources
+```bash
+npm run test
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## CI (GitHub Actions)
+
+O workflow em `.github/workflows/ci.yml` roda automaticamente em push/PR com:
+
+- `npm ci`
+- `npm run lint`
+- `npm run build`
+- `npm run test -- --watch=false`
+
+## Checklist de PR
+
+Antes de abrir PR, valide:
+
+- [ ] `npm run lint`
+- [ ] `npm run format:check`
+- [ ] `npm run test -- --watch=false`
+- [ ] `npm run build`
+- [ ] README atualizado quando houver mudança de fluxo/comandos

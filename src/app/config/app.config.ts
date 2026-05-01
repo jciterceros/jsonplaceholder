@@ -1,0 +1,15 @@
+import { provideBrowserGlobalErrorListeners } from '@angular/core';
+import type { ApplicationConfig } from '@angular/core';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
+
+import { httpErrorInterceptor } from '../data/interceptors/http-error.interceptor';
+import { routes } from './app.routes';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideHttpClient(withInterceptors([httpErrorInterceptor])),
+    provideRouter(routes),
+  ],
+};

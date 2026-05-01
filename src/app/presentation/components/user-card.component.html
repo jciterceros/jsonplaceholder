@@ -1,0 +1,74 @@
+<li class="user-card">
+  <header class="user-card__header">
+    <div>
+      <strong>{{ user().name }}</strong>
+      <span class="user-card__username">@{{ user().username }}</span>
+    </div>
+    <span class="user-card__id">#{{ user().id }}</span>
+  </header>
+
+  <section class="user-card__section">
+    <h2 class="user-card__section-title">Contato</h2>
+    <p class="user-card__row">
+      <span class="user-card__label">Email</span>
+      <a class="user-card__email" [href]="'mailto:' + user().email">{{ user().email }}</a>
+    </p>
+    <p class="user-card__row">
+      <span class="user-card__label">Phone</span>
+      <span>{{ user().phone }}</span>
+    </p>
+    <p class="user-card__row">
+      <span class="user-card__label">Website</span>
+      <a
+        class="user-card__link"
+        [href]="'https://' + user().website"
+        target="_blank"
+        rel="noopener noreferrer"
+        >{{ user().website }}</a
+      >
+    </p>
+  </section>
+
+  <section class="user-card__section">
+    <h2 class="user-card__section-title">Endereco</h2>
+    <p class="user-card__row">
+      <span class="user-card__label">City</span>
+      <span>{{ user().city }}</span>
+    </p>
+    <p class="user-card__row">
+      <span class="user-card__label">Street</span>
+      <span>{{ user().street }}</span>
+    </p>
+    <p class="user-card__row">
+      <span class="user-card__label">Suite</span>
+      <span>{{ user().suite }}</span>
+    </p>
+    <p class="user-card__row">
+      <span class="user-card__label">Zipcode</span>
+      <span>{{ user().zipcode }}</span>
+    </p>
+    <div class="user-card__geo">
+      <p class="user-card__geo-title">Geo Coordinates</p>
+      <div class="user-card__geo-values">
+        <span class="user-card__geo-pill"><strong>Lat:</strong> {{ user().lat }}</span>
+        <span class="user-card__geo-pill"><strong>Lng:</strong> {{ user().lng }}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="user-card__section user-card__company">
+    <h2 class="user-card__section-title">Empresa</h2>
+    <p class="user-card__row">
+      <span class="user-card__label">Company</span>
+      <span>{{ user().companyName }}</span>
+    </p>
+    <p class="user-card__row user-card__row--stacked">
+      <span class="user-card__label">Catchphrase</span>
+      <span>"{{ user().companyCatchPhrase }}"</span>
+    </p>
+    <p class="user-card__row user-card__row--stacked">
+      <span class="user-card__label">BS</span>
+      <span>"{{ user().companyBs }}"</span>
+    </p>
+  </section>
+</li>

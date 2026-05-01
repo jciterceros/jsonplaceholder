@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+.theme-toggle {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: var(--app-title-color);
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+button {
+  background: var(--app-control-bg);
+  border: 1px solid var(--app-control-border);
+  border-radius: 0.55rem;
+  color: var(--app-control-text);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+}
+
+button:hover {
+  background: var(--app-control-bg-hover);
+}

@@ -2,11 +2,12 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "db22824e-23dc-404d-9437-a15845e451a1"
   },
   "newProjectRoot": "projects",
   "projects": {
-    "jsonplaceholder_users": {
+    "jsonplaceholder": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -24,12 +25,16 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/styles.css"]
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -56,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "jsonplaceholder_users:build:production"
+              "buildTarget": "jsonplaceholder:build:production"
             },
             "development": {
-              "buildTarget": "jsonplaceholder_users:build:development"
+              "buildTarget": "jsonplaceholder:build:development"
             }
           },
           "defaultConfiguration": "development"

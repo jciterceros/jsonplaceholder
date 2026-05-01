@@ -1,0 +1,6 @@
+<span class="theme-toggle">
+  <h1>{{ title() }}</h1>
+  <button type="button" [attr.aria-pressed]="isDark()" (click)="emitToggle()">
+    Modo: {{ currentModeLabel() }} (trocar para {{ nextModeLabel() }})
+  </button>
+</span>
