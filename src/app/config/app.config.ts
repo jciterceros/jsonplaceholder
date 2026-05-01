@@ -4,6 +4,8 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 
 import { httpErrorInterceptor } from '../core/http/interceptors/http-error.interceptor';
+import { UsersRepository } from '../features/users/domain/ports/users-repository';
+import { UsersService } from '../features/users/infrastructure/services/users.service';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
@@ -11,5 +13,6 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(withInterceptors([httpErrorInterceptor])),
     provideRouter(routes),
+    { provide: UsersRepository, useExisting: UsersService },
   ],
 };
