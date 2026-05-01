@@ -50,6 +50,54 @@ module.exports = [
     },
   },
   {
+    files: ['src/app/features/*/domain/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            '**/features/*/application/**',
+            '**/features/*/infrastructure/**',
+            '**/features/*/presentation/**',
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/app/features/*/application/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: ['**/features/*/infrastructure/**', '**/features/*/presentation/**'],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/app/features/*/presentation/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: ['**/features/*/infrastructure/**'],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/app/features/*/infrastructure/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: ['**/features/*/application/**', '**/features/*/presentation/**'],
+        },
+      ],
+    },
+  },
+  {
     files: ['**/*.html'],
     languageOptions: {
       parser: angularTemplateParser,
