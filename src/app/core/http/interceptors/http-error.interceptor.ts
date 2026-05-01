@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import type { HttpInterceptorFn } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 
-import { ApiError } from '../errors/api-error';
+import { ApiError } from '../../errors/api-error';
 
 function mapHttpErrorToMessage(error: HttpErrorResponse): string {
   if (error.status === 0) {

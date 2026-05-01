@@ -68,6 +68,7 @@ Para evolucao por resource com Clean Architecture:
 
 - `docs/architecture/feature-clean-architecture.md`
 - `docs/architecture/resource-template.md`
+- `docs/architecture/pr-roadmap.md` (proximos PRs apos a #1 de migracao users; alinhamento a estrutura alvo)
 
 ## Checklist de PR
 
