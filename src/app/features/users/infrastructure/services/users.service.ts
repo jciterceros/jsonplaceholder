@@ -6,13 +6,14 @@ import type { Observable } from 'rxjs';
 import { environment } from '../../../../../environments/environment';
 import { mapUserApiItemToSummary } from '../../domain/mappers/user.mapper';
 import type { UserApiItem, UserSummary } from '../../domain/models/user.model';
+import type { UsersRepository } from '../../domain/ports/users-repository';
 
 const USERS_ENDPOINT = `${environment.apiBaseUrl}/users`;
 
 @Injectable({
   providedIn: 'root',
 })
-export class UsersService {
+export class UsersService implements UsersRepository {
   private readonly http = inject(HttpClient);
 
   public getUsers(): Observable<UserSummary[]> {

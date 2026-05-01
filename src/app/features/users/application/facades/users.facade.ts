@@ -2,7 +2,7 @@ import { Injectable, computed, effect, inject, signal } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
 
 import { ApiError } from '../../../../core/errors/api-error';
-import { UsersService } from '../../infrastructure/services/users.service';
+import { GetUsersUseCase } from '../use-cases/get-users.use-case';
 
 const LOAD_USERS_ERROR_MESSAGE = 'Falha ao carregar usuarios. Tente novamente.';
 const THEME_STORAGE_KEY = 'app-theme-mode';
@@ -12,7 +12,7 @@ const PAGE_SIZE = 6;
   providedIn: 'root',
 })
 export class UsersFacade {
-  private readonly usersService = inject(UsersService);
+  private readonly getUsersUseCase = inject(GetUsersUseCase);
 
   /**
    * `params` must not be `undefined` or the resource stays `idle` and never runs the loader
@@ -20,7 +20,7 @@ export class UsersFacade {
    */
   public readonly usersResource = rxResource({
     params: () => null,
-    stream: () => this.usersService.getUsers(),
+    stream: () => this.getUsersUseCase.execute(),
   });
 
   public readonly title = signal('JSONPlaceholder Users');
