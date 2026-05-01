@@ -1,6 +1,6 @@
 import { Component, HostBinding, inject } from '@angular/core';
 import type { OnInit } from '@angular/core';
-import { ThemeToggleComponent } from '../../../../presentation/components/theme-toggle.component';
+import { ThemeToggleComponent } from '../../../../shared/ui/theme-toggle/theme-toggle.component';
 import { UsersFacade } from '../../application/facades/users.facade';
 import { UserCardComponent } from '../components/user-card.component';
 
