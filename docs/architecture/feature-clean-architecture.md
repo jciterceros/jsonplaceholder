@@ -110,6 +110,21 @@ Cada resource novo deve seguir o mesmo kit minimo:
 - Regras de import devem ser validadas no lint para proteger fronteiras.
 - Decisoes arquiteturais devem gerar ADR curto em `docs/architecture/adr/`.
 
+## Visualizacao C4
+
+- Indice C4: [docs/architecture/c4/README.md](./c4/README.md)
+- Level 1: [System Context](./c4/01-system-context.md)
+- Level 2: [Container](./c4/02-container.md)
+- Level 3: [Components users](./c4/03-component-users.md)
+- Level 4: [Code users](./c4/04-code-users.md)
+
+## Diagramas de sequencia
+
+- Indice: [docs/architecture/sequence/README.md](./sequence/README.md)
+- Fluxo 01: [Load users](./sequence/01-load-users.md)
+- Fluxo 02: [Toggle theme](./sequence/02-toggle-theme.md)
+- Fluxo 03: [Error flow](./sequence/03-error-flow.md)
+
 ## Backlog de migracao incremental
 
 ### Fase 0 (atual)
