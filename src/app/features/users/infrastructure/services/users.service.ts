@@ -4,8 +4,9 @@ import { map } from 'rxjs';
 import type { Observable } from 'rxjs';
 
 import { environment } from '../../../../../environments/environment';
-import type { UserApiItem, UserSummary } from '../../domain/entities/user.entity';
+import type { UserSummary } from '../../domain/entities/user.entity';
 import type { UsersRepository } from '../../domain/ports/users-repository';
+import type { UserApiItemDto } from '../api/user-api-item.dto';
 import { mapUserApiItemToSummary } from '../mappers/user.mapper';
 
 const USERS_ENDPOINT = `${environment.apiBaseUrl}/users`;
@@ -18,7 +19,7 @@ export class UsersService implements UsersRepository {
 
   public getUsers(): Observable<UserSummary[]> {
     return this.http
-      .get<UserApiItem[]>(USERS_ENDPOINT)
+      .get<UserApiItemDto[]>(USERS_ENDPOINT)
       .pipe(map((users) => users.map(mapUserApiItemToSummary)));
   }
 }

@@ -1,9 +1,9 @@
-import type { UserApiItem } from '../../domain/entities/user.entity';
+import type { UserApiItemDto } from '../api/user-api-item.dto';
 import { mapUserApiItemToSummary } from './user.mapper';
 
 describe('mapUserApiItemToSummary', () => {
   it('should map a UserApiItem into UserSummary', () => {
-    const apiUser: UserApiItem = {
+    const apiUser: UserApiItemDto = {
       id: 1,
       name: 'Leanne Graham',
       username: 'Bret',

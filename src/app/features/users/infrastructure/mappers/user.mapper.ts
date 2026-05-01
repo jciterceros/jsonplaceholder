@@ -1,6 +1,7 @@
-import type { UserApiItem, UserSummary } from '../../domain/entities/user.entity';
+import type { UserSummary } from '../../domain/entities/user.entity';
+import type { UserApiItemDto } from '../api/user-api-item.dto';
 
-export function mapUserApiItemToSummary(user: UserApiItem): UserSummary {
+export function mapUserApiItemToSummary(user: UserApiItemDto): UserSummary {
   return {
     id: user.id,
     name: user.name,
