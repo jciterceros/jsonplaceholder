@@ -57,10 +57,17 @@ npm run test
 
 O workflow em `.github/workflows/ci.yml` roda automaticamente em push/PR com:
 
-- `npm ci`
+- `npm install --include=optional`
 - `npm run lint`
 - `npm run build`
 - `npm run test -- --watch=false`
+
+## Arquitetura evolutiva
+
+Para evolucao por resource com Clean Architecture:
+
+- `docs/architecture/feature-clean-architecture.md`
+- `docs/architecture/resource-template.md`
 
 ## Checklist de PR
 
