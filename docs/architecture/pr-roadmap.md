@@ -46,6 +46,29 @@ _(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.
 - Injetar a abstracao no `GetUsersUseCase` (sem dependencia direta de `UsersService`).
 - Declarar binding em providers (`useExisting`) no `app.config.ts`.
 
+## PR #8 — concluida — hardening de Clean Architecture
+
+- Mover contratos de API (`UserApiItemDto`) para `infrastructure/api`.
+- Extrair persistencia de tema para `ThemePreferencesRepository` com implementacao em `infrastructure/repositories`.
+- Adicionar testes de `application` para `GetUsersUseCase` e `UsersFacade`.
+- Atualizar este roadmap com o estado mais recente das PRs.
+
+## PR #9 — concluida — validacao de alinhamento arquitetural
+
+- Confirmar que `GetUsersUseCase` depende de abstracao (`UsersRepository`) em `src/app/features/users/application/use-cases/get-users.use-case.ts`.
+- Confirmar bindings de abstracoes no composition root `src/app/config/app.config.ts` com `useExisting`.
+- Confirmar DTO de API em `infrastructure/api` e dominio com `UserSummary` apenas.
+- Confirmar persistencia de tema por porta (`ThemePreferencesRepository`) com implementacao em `infrastructure/repositories`.
+- Confirmar cobertura de testes da camada `application`:
+  - `GetUsersUseCase` (`src/app/features/users/application/use-cases/get-users.use-case.spec.ts`)
+  - `UsersFacade` (`src/app/features/users/application/facades/users.facade.spec.ts`)
+  - service e mapper (`src/app/features/users/infrastructure/**`)
+
+## PR #10 (opcional) — mitigacao de risco residual
+
+- Adicionar teste unitario dedicado para `LocalStorageThemePreferencesRepository`.
+- Configurar regra de lint para fronteiras de import entre camadas (enforcement automatico).
+
 ## Referencia
 
 - Estrutura alvo: [feature-clean-architecture.md](./feature-clean-architecture.md).
