@@ -4,9 +4,9 @@ import { map } from 'rxjs';
 import type { Observable } from 'rxjs';
 
 import { environment } from '../../../../../environments/environment';
-import { mapUserApiItemToSummary } from '../../domain/mappers/user.mapper';
-import type { UserApiItem, UserSummary } from '../../domain/models/user.model';
+import type { UserApiItem, UserSummary } from '../../domain/entities/user.entity';
 import type { UsersRepository } from '../../domain/ports/users-repository';
+import { mapUserApiItemToSummary } from '../mappers/user.mapper';
 
 const USERS_ENDPOINT = `${environment.apiBaseUrl}/users`;
 

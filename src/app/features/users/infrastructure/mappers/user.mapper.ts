@@ -1,4 +1,4 @@
-import type { UserApiItem, UserSummary } from '../models/user.model';
+import type { UserApiItem, UserSummary } from '../../domain/entities/user.entity';
 
 export function mapUserApiItemToSummary(user: UserApiItem): UserSummary {
   return {
