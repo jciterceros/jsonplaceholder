@@ -3,7 +3,7 @@ import type { ApplicationConfig } from '@angular/core';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 
-import { httpErrorInterceptor } from '../data/interceptors/http-error.interceptor';
+import { httpErrorInterceptor } from '../core/http/interceptors/http-error.interceptor';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
