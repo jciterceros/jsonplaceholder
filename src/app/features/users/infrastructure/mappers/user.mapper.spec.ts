@@ -1,4 +1,4 @@
-import type { UserApiItem } from '../models/user.model';
+import type { UserApiItem } from '../../domain/entities/user.entity';
 import { mapUserApiItemToSummary } from './user.mapper';
 
 describe('mapUserApiItemToSummary', () => {

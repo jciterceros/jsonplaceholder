@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-import type { UserSummary } from '../../domain/models/user.model';
+import type { UserSummary } from '../../domain/entities/user.entity';
 
 @Component({
   selector: 'app-user-card',
