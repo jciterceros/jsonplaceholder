@@ -3,7 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs';
 import type { Observable } from 'rxjs';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../../environments/environment';
 import { mapUserApiItemToSummary } from '../../domain/mappers/user.mapper';
 import type { UserApiItem, UserSummary } from '../../domain/models/user.model';
 

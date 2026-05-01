@@ -1,5 +1,5 @@
-import { mapUserApiItemToSummary } from './user.mapper';
 import type { UserApiItem } from '../models/user.model';
+import { mapUserApiItemToSummary } from './user.mapper';
 
 describe('mapUserApiItemToSummary', () => {
   it('should map a UserApiItem into UserSummary', () => {
