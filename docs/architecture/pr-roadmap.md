@@ -6,6 +6,8 @@ A numeracao abaixo segue a sequencia no **GitHub** apos a primeira PR ja aberta.
 
 ## PR #1 — concluida (referencia)
 
+- GitHub: [PR #1](https://github.com/jciterceros/jsonplaceholder/pull/1)
+
 Titulo exemplo: `feat(users): migrate users to features module with lazy loading`
 
 - Move codigo de users para `src/app/features/users` (domain, infrastructure, presentation).
@@ -16,6 +18,8 @@ _(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.
 
 ## PR #2 — concluida — `core` (infra transversal)
 
+- GitHub: [PR #2](https://github.com/jciterceros/jsonplaceholder/pull/2)
+
 - Criar `src/app/core/errors/` e `src/app/core/http/interceptors/`.
 - Mover `ApiError` e `httpErrorInterceptor` a partir de `src/app/data/` (se ainda existirem).
 - Atualizar imports em `app.config.ts` e consumidores (ex.: `UsersFacade`).
@@ -23,24 +27,34 @@ _(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.
 
 ## PR #3 — concluida — `shared/ui` (reuso entre features)
 
+- GitHub: [PR #3](https://github.com/jciterceros/jsonplaceholder/pull/3)
+
 - Mover `theme-toggle` de `src/app/presentation/components/` para `src/app/shared/ui/theme-toggle/`.
 - Atualizar imports na feature `users` e no shell se necessario.
 
 ## PR #4 — concluida — API publica da feature `users`
 
+- GitHub: [PR #4](https://github.com/jciterceros/jsonplaceholder/pull/4)
+
 - Adicionar `src/app/features/users/index.ts` exportando apenas o necessario (ex.: `USERS_ROUTES`, tokens ou simbolos publicos).
 
 ## PR #5 — concluida — Domain ports e use cases
+
+- GitHub: [PR #5](https://github.com/jciterceros/jsonplaceholder/pull/5)
 
 - Introduzir `UsersRepository` (porta), `GetUsersUseCase`, e implementacao em `infrastructure`.
 - Ajustar `UsersFacade` para depender de use cases em vez de `UsersService` direto.
 
 ## PR #6 — concluida — Pastas domain alinhadas ao doc
 
+- GitHub: [PR #6](https://github.com/jciterceros/jsonplaceholder/pull/6)
+
 - `domain/models` → `domain/entities` (ou dividir entidade vs DTO de API).
 - Mappers em `infrastructure/mappers/` conforme convencao do time.
 
 ## PR #7 — concluida — DIP no use case de users
+
+- GitHub: [PR #7](https://github.com/jciterceros/jsonplaceholder/pull/7)
 
 - Tornar `UsersRepository` um token injetavel no dominio.
 - Injetar a abstracao no `GetUsersUseCase` (sem dependencia direta de `UsersService`).
@@ -48,12 +62,16 @@ _(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.
 
 ## PR #8 — concluida — hardening de Clean Architecture
 
+- GitHub: [PR #8](https://github.com/jciterceros/jsonplaceholder/pull/8)
+
 - Mover contratos de API (`UserApiItemDto`) para `infrastructure/api`.
 - Extrair persistencia de tema para `ThemePreferencesRepository` com implementacao em `infrastructure/repositories`.
 - Adicionar testes de `application` para `GetUsersUseCase` e `UsersFacade`.
 - Atualizar este roadmap com o estado mais recente das PRs.
 
 ## PR #9 — concluida — validacao de alinhamento arquitetural
+
+- GitHub: [PR #9](https://github.com/jciterceros/jsonplaceholder/pull/9)
 
 - Confirmar que `GetUsersUseCase` depende de abstracao (`UsersRepository`) em `src/app/features/users/application/use-cases/get-users.use-case.ts`.
 - Confirmar bindings de abstracoes no composition root `src/app/config/app.config.ts` com `useExisting`.
@@ -66,10 +84,14 @@ _(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.
 
 ## PR #10 — concluida — mitigacao de risco residual
 
+- GitHub: [PR #10](https://github.com/jciterceros/jsonplaceholder/pull/10)
+
 - Adicionar teste unitario dedicado para `LocalStorageThemePreferencesRepository`.
 - Configurar regra de lint para fronteiras de import entre camadas (enforcement automatico).
 
 ## PR #11 — concluida — ADR de fronteiras e contratos de DI
+
+- GitHub: [PR #11](https://github.com/jciterceros/jsonplaceholder/pull/11)
 
 - Formalizar decisao arquitetural em ADR para fronteiras de camada e contratos de DI.
 - Registrar regras de dependencia, alocacao de DTOs e estrategia de enforcement via lint.
