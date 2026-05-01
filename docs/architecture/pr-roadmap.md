@@ -96,6 +96,29 @@ _(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.
 - Formalizar decisao arquitetural em ADR para fronteiras de camada e contratos de DI.
 - Registrar regras de dependencia, alocacao de DTOs e estrategia de enforcement via lint.
 
+## PR #12 — concluida — guias C4 e diagramas de sequencia
+
+- GitHub: [PR #12](https://github.com/jciterceros/jsonplaceholder/pull/12)
+
+- Adicionar estrutura de documentacao C4 em `docs/architecture/c4/`.
+- Adicionar diagramas de sequencia em `docs/architecture/sequence/`.
+- Integrar links de navegacao em `feature-clean-architecture.md`.
+
+## PR #13 — concluida — rastreabilidade por links GitHub
+
+- GitHub: [PR #13](https://github.com/jciterceros/jsonplaceholder/pull/13)
+
+- Adicionar links diretos do GitHub (`PR #N -> URL`) em cada item do roadmap.
+- Melhorar rastreabilidade entre planejamento e entregas versionadas.
+
+## PR #14 — em andamento — setup Docker e Docker Compose
+
+- GitHub: [PR #14](https://github.com/jciterceros/jsonplaceholder/pull/14)
+
+- Adicionar `Dockerfile` multi-stage para build Angular e runtime com Nginx.
+- Adicionar `docker-compose.yml` (producao local) e `docker-compose.dev.yml` (dev server).
+- Adicionar scripts npm para build/up/down/logs dos ambientes Docker.
+
 ## Referencia
 
 - Estrutura alvo: [feature-clean-architecture.md](./feature-clean-architecture.md).
