@@ -69,7 +69,7 @@ _(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.
 - Adicionar teste unitario dedicado para `LocalStorageThemePreferencesRepository`.
 - Configurar regra de lint para fronteiras de import entre camadas (enforcement automatico).
 
-## PR #11 (opcional) — ADR de fronteiras e contratos de DI
+## PR #11 — concluida — ADR de fronteiras e contratos de DI
 
 - Formalizar decisao arquitetural em ADR para fronteiras de camada e contratos de DI.
 - Registrar regras de dependencia, alocacao de DTOs e estrategia de enforcement via lint.
@@ -78,3 +78,5 @@ _(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.
 
 - Estrutura alvo: [feature-clean-architecture.md](./feature-clean-architecture.md).
 - ADR 0001: [users-layer-boundaries-and-di](./adr/0001-users-layer-boundaries-and-di.md)
+- C4: [indice C4](./c4/README.md)
+- Sequence: [indice de diagramas de sequencia](./sequence/README.md)
