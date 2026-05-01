@@ -12,7 +12,7 @@ Titulo exemplo: `feat(users): migrate users to features module with lazy loading
 - `AppComponent` como shell com `router-outlet`.
 - `users.routes.ts` e lazy load em `app.routes.ts`.
 
-*(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.)*
+_(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.)_
 
 ## PR #2 — `core` (infra transversal)
 
