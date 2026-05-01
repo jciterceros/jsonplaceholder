@@ -64,11 +64,17 @@ _(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.
   - `UsersFacade` (`src/app/features/users/application/facades/users.facade.spec.ts`)
   - service e mapper (`src/app/features/users/infrastructure/**`)
 
-## PR #10 (opcional) — mitigacao de risco residual
+## PR #10 — concluida — mitigacao de risco residual
 
 - Adicionar teste unitario dedicado para `LocalStorageThemePreferencesRepository`.
 - Configurar regra de lint para fronteiras de import entre camadas (enforcement automatico).
 
+## PR #11 (opcional) — ADR de fronteiras e contratos de DI
+
+- Formalizar decisao arquitetural em ADR para fronteiras de camada e contratos de DI.
+- Registrar regras de dependencia, alocacao de DTOs e estrategia de enforcement via lint.
+
 ## Referencia
 
 - Estrutura alvo: [feature-clean-architecture.md](./feature-clean-architecture.md).
+- ADR 0001: [users-layer-boundaries-and-di](./adr/0001-users-layer-boundaries-and-di.md)
