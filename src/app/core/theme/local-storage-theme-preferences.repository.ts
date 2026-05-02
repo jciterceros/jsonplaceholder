@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import type {
-  ThemeMode,
-  ThemePreferencesRepository,
-} from '../../domain/ports/theme-preferences-repository';
+import type { ThemeMode, ThemePreferencesRepository } from './theme-preferences-repository';
 
 const THEME_STORAGE_KEY = 'app-theme-mode';
 

@@ -2,6 +2,12 @@
 
 @import 'tailwindcss';
 
+html,
+body {
+  background: var(--app-bg-root);
+  color: var(--app-title-color);
+}
+
 :root,
 .theme-light {
   --app-text-primary: #111827;
@@ -43,7 +49,7 @@
 .theme-dark {
   --app-text-primary: #111827;
   --app-text-secondary: #e5e7eb;
-  --app-bg-root: #0b1220;
+  --app-bg-root: #121212;
   --app-surface-container: #0b1220;
   --app-surface-card: #0f172a;
   --app-border-default: #1f2937;

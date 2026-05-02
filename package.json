@@ -2,6 +2,7 @@
   "name": "jsonplaceholder",
   "version": "0.0.0",
   "scripts": {
+    "prepare": "node scripts/setup-git-hooks.mjs",
     "ng": "ng",
     "start": "ng serve",
     "start:lan": "ng serve --host 0.0.0.0 --port 4200",

@@ -9,6 +9,18 @@
   margin-bottom: 1rem;
 }
 
+.theme-toggle--compact {
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+.theme-toggle--compact button {
+  font-size: 0.82rem;
+  max-width: 100%;
+  padding: 0.4rem 0.65rem;
+  white-space: normal;
+}
+
 h1 {
   color: var(--app-title-color);
   font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);

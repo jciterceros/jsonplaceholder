@@ -1,0 +1,94 @@
+<div class="home-bg" aria-hidden="true"></div>
+
+<main id="top" class="home-main">
+  @if (errorMessage()) {
+    <section class="status-card status-card--error" aria-live="assertive" aria-atomic="true">
+      <p class="error">{{ errorMessage() }}</p>
+      <button type="button" class="btn-primary" (click)="reload()">Tentar novamente</button>
+    </section>
+  } @else if (!postsResource.hasValue()) {
+    <section class="status-card status-card--loading" aria-live="polite" aria-atomic="true">
+      <p>Carregando…</p>
+    </section>
+  } @else if (posts().length === 0) {
+    <section class="status-card status-card--empty">
+      <p>Nenhum post encontrado.</p>
+    </section>
+  } @else {
+    <div class="toolbar">
+      <label class="search-field">
+        <span class="visually-hidden">Buscar posts</span>
+        <input
+          type="search"
+          class="search-input"
+          [value]="searchTerm()"
+          placeholder="Buscar por título ou conteúdo"
+          aria-label="Buscar posts por título ou conteúdo"
+          (input)="onSearchTermChange($event)"
+        />
+      </label>
+    </div>
+
+    @if (featuredPost(); as hero) {
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">Destaque</p>
+          <h1 id="hero-heading" class="hero__title">{{ hero.title }}</h1>
+          <p class="hero__body">{{ excerpt(hero.body, 320) }}</p>
+          <a routerLink="/" fragment="work" class="hero__cta">
+            Ver trabalhos
+            <span class="hero__cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__frame">
+            <img
+              class="hero__img"
+              [src]="heroImageUrl(hero.id)"
+              width="720"
+              height="540"
+              alt=""
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </section>
+    }
+
+    <section id="work" class="work" aria-labelledby="work-heading">
+      <div class="work__head">
+        <h2 id="work-heading" class="work__title">Mais posts</h2>
+        <p class="work__subtitle">Role horizontalmente para explorar</p>
+      </div>
+
+      @if (gridPosts().length === 0) {
+        <p class="work__empty">Nenhum outro post com este filtro.</p>
+      } @else {
+        <div class="cards-scroller">
+          <ul class="cards-row">
+            @for (post of gridPosts(); track post.id) {
+              <li class="soft-card">
+                <div class="soft-card__media">
+                  <img
+                    [src]="cardImageUrl(post.id)"
+                    width="480"
+                    height="280"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="soft-card__body">
+                  <p class="soft-card__meta">User {{ post.userId }} · #{{ post.id }}</p>
+                  <h3 class="soft-card__title">{{ post.title }}</h3>
+                  <p class="soft-card__excerpt">{{ excerpt(post.body) }}</p>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </section>
+  }
+</main>

@@ -1,16 +1,8 @@
-<main class="container">
-  <app-theme-toggle
-    [title]="title()"
-    [currentModeLabel]="currentModeLabel()"
-    [nextModeLabel]="nextModeLabel()"
-    [isDark]="isDark()"
-    (toggle)="toggleMode()"
-  />
-
+<main class="container users-main">
   @if (errorMessage()) {
     <section class="status-card status-card--error" aria-live="assertive" aria-atomic="true">
       <p class="error">{{ errorMessage() }}</p>
-      <button type="button" (click)="reloadUsers()">Tentar novamente</button>
+      <button type="button" class="btn-retry" (click)="reloadUsers()">Tentar novamente</button>
     </section>
   } @else if (!usersResource.hasValue()) {
     <section class="status-card status-card--loading" aria-live="polite" aria-atomic="true">

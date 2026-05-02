@@ -1,3 +1,12 @@
 :host {
-  display: block;
+  background: var(--app-bg-root);
+  color: var(--app-title-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Routed view grows so the global footer stays at the bottom of the viewport when content is short */
+:host > router-outlet + * {
+  flex: 1 1 auto;
 }

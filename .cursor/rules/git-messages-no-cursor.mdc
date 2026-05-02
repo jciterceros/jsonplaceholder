@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+---
+
+# Git and PR messages (no Cursor branding)
+
+When you produce **Git commit messages** or **GitHub pull request titles/descriptions** for this repository:
+
+- Do **not** add footers such as `Made with [Cursor](https://cursor.com)` or similar marketing or attribution to Cursor.
+- Do **not** add `Co-authored-by: Cursor <cursoragent@cursor.com>` or any `Co-authored-by:` line that attributes authorship to Cursor.
+- Do **not** add links to `cursor.com` for tool promotion in commits or PR bodies.
+
+Technical uses of the word “cursor” in real domain or API wording (for example CSS `cursor`, database cursors, or variable names) are fine when they are genuine technical content, not tool marketing.
