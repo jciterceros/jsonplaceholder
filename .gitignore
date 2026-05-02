@@ -28,7 +28,9 @@ yarn-error.log
 !.vscode/extensions.json
 !.vscode/mcp.json
 .history/*
-.cursor/
+.cursor/**
+!.cursor/rules/
+!.cursor/rules/git-messages-no-cursor.mdc
 .agents/
 skills-lock.json
 

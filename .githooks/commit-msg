@@ -1,0 +1,2 @@
+#!/bin/sh
+exec node "$(dirname "$0")/../scripts/filter-cursor-from-commit-msg.mjs" "$1"
