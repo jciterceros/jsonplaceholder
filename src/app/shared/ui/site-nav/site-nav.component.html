@@ -1,0 +1,21 @@
+<header class="site-nav">
+  <div class="site-nav__container">
+    <a routerLink="/" class="site-nav__brand">Portfolio</a>
+    <nav class="site-nav__links" aria-label="Recursos JSONPlaceholder">
+      <a routerLink="/posts" class="site-nav__link" routerLinkActive="site-nav__link--active">Posts</a>
+      <a routerLink="/comments" class="site-nav__link" routerLinkActive="site-nav__link--active">Comments</a>
+      <a routerLink="/albums" class="site-nav__link" routerLinkActive="site-nav__link--active">Albums</a>
+      <a routerLink="/photos" class="site-nav__link" routerLinkActive="site-nav__link--active">Photos</a>
+      <a routerLink="/todos" class="site-nav__link" routerLinkActive="site-nav__link--active">Todos</a>
+      <a routerLink="/users" class="site-nav__link" routerLinkActive="site-nav__link--active">Users</a>
+    </nav>
+    <app-theme-toggle
+      class="site-nav__theme"
+      [compact]="true"
+      [currentModeLabel]="currentModeLabel()"
+      [nextModeLabel]="nextModeLabel()"
+      [isDark]="isDark()"
+      (toggle)="onThemeToggle()"
+    />
+  </div>
+</header>

@@ -1,0 +1,73 @@
+<main class="container">
+  @if (errorMessage()) {
+    <section class="status-card status-card--error" aria-live="assertive" aria-atomic="true">
+      <p class="error">{{ errorMessage() }}</p>
+      <button type="button" class="btn-retry" (click)="reloadPosts()">Tentar novamente</button>
+    </section>
+  } @else if (!postsResource.hasValue()) {
+    <section class="status-card status-card--loading" aria-live="polite" aria-atomic="true">
+      <p>Carregando posts...</p>
+    </section>
+  } @else if (posts().length === 0) {
+    <section class="status-card status-card--empty">
+      <p>Nenhum post encontrado.</p>
+    </section>
+  } @else {
+    <section class="list-controls">
+      <input
+        type="search"
+        class="search-input"
+        [value]="searchTerm()"
+        placeholder="Buscar por titulo ou conteudo"
+        aria-label="Buscar posts por titulo ou conteudo"
+        (input)="onSearchTermChange($event)"
+      />
+      <div class="pagination-controls">
+        <button type="button" (click)="goToPreviousPage()" [disabled]="currentPage() <= 1">
+          Anterior
+        </button>
+        <span class="pagination-controls__label">Pagina {{ currentPage() }} de {{ totalPages() }}</span>
+        <button type="button" (click)="goToNextPage()" [disabled]="currentPage() >= totalPages()">
+          Proxima
+        </button>
+      </div>
+    </section>
+
+    @if (filteredPosts().length === 0) {
+      <section class="status-card status-card--empty">
+        <p>Nenhum post corresponde ao filtro informado.</p>
+      </section>
+    } @else {
+      <section class="work" aria-labelledby="posts-work-heading">
+        <div class="work__head">
+          <h2 id="posts-work-heading" class="work__title">{{ title() }}</h2>
+          <p class="work__subtitle">Role horizontalmente para explorar os posts desta pagina</p>
+        </div>
+
+        <div class="cards-scroller">
+          <ul class="cards-row">
+            @for (post of pagedPosts(); track post.id) {
+              <li class="soft-card">
+                <div class="soft-card__media">
+                  <img
+                    [src]="cardImageUrl(post.id)"
+                    width="480"
+                    height="280"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="soft-card__body">
+                  <p class="soft-card__meta">Usuario {{ post.userId }} · #{{ post.id }}</p>
+                  <h3 class="soft-card__title">{{ post.title }}</h3>
+                  <p class="soft-card__excerpt">{{ excerpt(post.body) }}</p>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+      </section>
+    }
+  }
+</main>

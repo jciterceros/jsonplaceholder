@@ -1,13 +1,23 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 
+import { ThemePreferencesRepository } from '../core/theme/theme-preferences-repository';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
-      providers: [provideRouter([])],
+      providers: [
+        provideRouter([]),
+        {
+          provide: ThemePreferencesRepository,
+          useValue: {
+            readMode: (): 'dark' | 'light' | null => null,
+            saveMode: (): void => undefined,
+          },
+        },
+      ],
     }).compileComponents();
   });
 
