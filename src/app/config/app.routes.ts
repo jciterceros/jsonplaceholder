@@ -12,25 +12,33 @@ export const routes: Routes = [
   {
     path: 'comments',
     loadComponent: () =>
-      import('../shared/presentation/pages/resource-stub.page').then((m) => m.ResourceStubPageComponent),
+      import('../shared/presentation/pages/resource-stub.page').then(
+        (m) => m.ResourceStubPageComponent,
+      ),
     data: { title: 'Comentários' },
   },
   {
     path: 'albums',
     loadComponent: () =>
-      import('../shared/presentation/pages/resource-stub.page').then((m) => m.ResourceStubPageComponent),
+      import('../shared/presentation/pages/resource-stub.page').then(
+        (m) => m.ResourceStubPageComponent,
+      ),
     data: { title: 'Álbuns' },
   },
   {
     path: 'photos',
     loadComponent: () =>
-      import('../shared/presentation/pages/resource-stub.page').then((m) => m.ResourceStubPageComponent),
+      import('../shared/presentation/pages/resource-stub.page').then(
+        (m) => m.ResourceStubPageComponent,
+      ),
     data: { title: 'Fotos' },
   },
   {
     path: 'todos',
     loadComponent: () =>
-      import('../shared/presentation/pages/resource-stub.page').then((m) => m.ResourceStubPageComponent),
+      import('../shared/presentation/pages/resource-stub.page').then(
+        (m) => m.ResourceStubPageComponent,
+      ),
     data: { title: 'Tarefas' },
   },
   {

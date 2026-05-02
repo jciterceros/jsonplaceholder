@@ -22,4 +22,3 @@ export class SiteNavComponent {
     this.theme.toggle();
   }
 }
-

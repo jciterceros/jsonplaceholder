@@ -17,4 +17,3 @@ export class AppComponent {
     inject(AppThemeService).init();
   }
 }
-
