@@ -111,13 +111,24 @@ _(Esta PR corresponde ao piloto users da Fase 1; numeros seguintes partem da #2.
 - Adicionar links diretos do GitHub (`PR #N -> URL`) em cada item do roadmap.
 - Melhorar rastreabilidade entre planejamento e entregas versionadas.
 
-## PR #14 — em andamento — setup Docker e Docker Compose
+## PR #14 — concluida — setup Docker e Docker Compose
 
 - GitHub: [PR #14](https://github.com/jciterceros/jsonplaceholder/pull/14)
 
 - Adicionar `Dockerfile` multi-stage para build Angular e runtime com Nginx.
 - Adicionar `docker-compose.yml` (producao local) e `docker-compose.dev.yml` (dev server).
 - Adicionar scripts npm para build/up/down/logs dos ambientes Docker.
+
+## PR #15 — concluida — tema global, shell da app, features `home` e `posts`
+
+- GitHub: [PR #15](https://github.com/jciterceros/jsonplaceholder/pull/15)
+
+- Mover preferencias de tema para `src/app/core/theme/` com `AppThemeService` a sincronizar `theme-dark` / `theme-light` em `documentElement`.
+- Shell com `app-site-nav`, `app-site-footer` e toggle de tema na navegacao; `AppComponent` reduzido a `router-outlet` entre nav e footer.
+- Lazy routes para `home` e `posts`; stubs partilhados para rotas ainda nao implementadas (`resource-stub.page.ts`).
+- Estilos claros/escuros com `:host-context(.theme-light)` em users, home, posts, nav e footer; tokens globais em `styles.css` e `index.html` com classe inicial `theme-dark`.
+- Hooks Git versionados (`.githooks/commit-msg`) para remover rodapes `Co-authored-by` / `Made with [Cursor]` das mensagens; `npm prepare` define `core.hooksPath`; regra Cursor em `.cursor/rules/git-messages-no-cursor.mdc`; template de PR em `.github/pull_request_template.md`.
+- Ajuste Prettier em massa para `format:check` passar no CI.
 
 ## Referencia
 
